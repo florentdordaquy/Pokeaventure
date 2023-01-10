@@ -51,9 +51,29 @@ Fan site Pokémon, regroupant toutes les informations importantes sur les jeux d
 ## Partie Back :
 
 - ### MySQL
-  - [ ] Création de la base de donnée
-    - Table ...
-    - Table ...
+  - Création de la base de donnée
+    - [x] Tables pour les Générations, les Jeux, les Régions
+    - [x] Table pour les Types et leur efficacité 
+    - [ ] Table pour les status
+    - [ ] Table pour le pokédex national
+    - [ ] Table GigaMax, MégaEvolutions
+    - [ ] Table Groupe Oeuf
+    - [ ] 
+    - 
+      - [ ] Table pour le dex regional
+      - [x] Table pour les évolutions
+      - [ ] Table pour les lieux 
+      - [ ] Table des pokémons selon le lieu et le jeu + le % de chance de le trouver
+      - [ ] Table pour les attaques + linkage avec les types, les status et les pokemons
+      - [ ] Table pour les talents + linkage avec les pokémons (avec le talent caché)
+      - [ ] Table pour les objets (nom, catégorie, effet, etc...)
+      - [ ] Table pour les users (nom, prénom, pseudo, email, mot de passe, etc...)
+      - [ ] Table pour les pokémons des users (nom, prénom, pseudo, email, mot de passe, etc...)
+      - [ ] Table pour l'équipe de pokemon de l'user
+      - [ ] Table pour les combats (nom, prénom, pseudo, email, mot de passe, etc...)
+      - 
+    
+    
   - [ ] Remplissage de la base de donnée 'Pokeaventure'
 - ### Java  
   - [ ] Système de connexion - déconnexion - inscription - mot de passe oublié - confirmation par mail - ...
@@ -77,10 +97,9 @@ Fan site Pokémon, regroupant toutes les informations importantes sur les jeux d
   
 ## Quelles informations doivent être connues pour la création d'un pokémon ?
 
-Informations générales :
+Informations générales (FIXES):
 
 - Numéro dex national
-- Numéro dex régional
 - Nom (français, anglais, japonais, etc...)
 - Catégorie (Pikachu = Souris, etc...)
 - Rang (Normal, Légendaire, Fabuleux, etc...)
@@ -92,8 +111,9 @@ Informations générales :
 - Groupes d'œufs
 - Nombre de pas pour éclore
 
-Informations par jeu et complémentaires :
+Informations differents selon les jeux :
 
+- Numéro dex régional
 - Attaques
 - Talents
 - Statistiques
@@ -126,12 +146,4 @@ Informations générales :
 - Méthode d'apprentissage (niveau, CT, eggMove, etc...)
 
 
-## Quelles informations doivent être connues pour la création d'un objet ?
-## Quelles informations doivent être connues pour la création d'une baie ?
-## Quelles informations doivent être connues pour la création d'un talent ?
-## Quelles informations doivent être connues pour la création d'un lieu ?
-## Quelles informations doivent être connues pour la création d'une région ?
-## Quelles informations doivent être connues pour la création d'un jeu ?
-## Quelles informations doivent être connues pour la création d'une génération ?
-## Quelles informations doivent être connues pour la création d'un article (news, etc...) ?
 

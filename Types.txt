@@ -1,0 +1,123 @@
+        -- GENERATION 1 (generation_id = 1) , Les types Ténèbres, Acier et Fée ne sont pas pris en compte
+
+/*
+    attaque Plante faible (x0,5) contre Vol, Poison, Insecte, Feu, Plante, Dragon
+    attaque Plante fort (x2) contre Sol, Roche, Eau
+    attaque plante normal (x1) contre le reste
+
+    attaque Poison faible (x0,5) contre Poison, Sol, Roche, Spectre
+    attaque Poison fort (x2) contre Plante, Insecte
+    attaque Poison normal (x1) contre le reste
+
+    attaque Feu faible (x0,5) contre Roche, Feu, Eau, Dragon
+    attaque Feu fort (x2) contre Insecte, Plante, Glace
+    attaque Feu normal (x1) contre le reste
+
+    attaque Vol faible (x0,5) contre Roche, Électrique
+    attaque Vol fort (x2) contre Combat, Insecte, Plante
+    attaque Vol normal (x1) contre le reste
+
+    attaque Eau faible (x0,5) contre Plante, Eau, Dragon
+    attaque Eau fort (x2) contre Sol, Roche, Feu
+    attaque Eau normal (x1) contre le reste
+
+    attaque Insecte faible (x0,5) contre Combat, Vol, Spectre, Feu
+    attaque Insecte fort (x2) contre Poison, Plante, Psy
+    attaque Insecte normal (x1) contre le reste
+
+    attaque inefficace (x0) contre Spectre
+    attaque Normal faible (x0,5) contre Roche
+    attaque Normal fort (x2) contre Aucun
+    attaque Normal normal (x1) contre le reste
+
+    attaque Electrique inefficace (x0) contre Sol
+    attaque Électrique faible (x0,5) contre Plante, Electrique, Dragon
+    attaque Électrique fort (x2) contre Eau, Vol
+    attaque Électrique normal (x1) contre le reste
+
+    attaque sol inefficace (x0) contre Vol
+    attaque Sol faible (x0,5) contre Insecte et Plante
+    attaque Sol fort (x2) contre Poison, Roche, Feu, Electrique
+    attaque Sol normal (x1) contre le reste
+
+    attaque Combat inefficace (x0) contre Spectre
+    attaque Combat faible (x0,5) contre Poison, Vol, Psy, Insecte
+    attaque Combat fort (x2) contre Normal, Roche, Glace
+    attaque Combat normal (x1) contre le reste
+
+    attaque Psy faible (x0,5) contre Psy
+    attaque Psy fort (x2) contre Combat, Poison
+    attaque Psy normal (x1) contre le reste
+
+    attaque Roche faible (x0,5) contre Combat, Sol
+    attaque Roche fort (x2) contre Vol, Insecte, Feu, Glace
+    attaque Roche normal (x1) contre le reste
+
+    attaque Glace faible (x0,5) contre Eau, Glace
+    attaque Glace fort (x2) contre Sol, Vol, Plante, Dragon
+    attaque Glace normal (x1) contre le reste
+
+    attaque Spectre inefficace (x0) contre Normal et Psy
+    attaque Spectre faible (x0,5) contre Aucun
+    attaque Spectre fort (x2) contre Ghost
+    attaque Spectre normal (x1) contre le reste
+
+    attaque Dragon faible (x0,5) contre Aucun
+    attaque Dragon fort (x2) contre Dragon
+    attaque Dragon normal (x1) contre le reste
+
+ */
+
+        -- GENERATION 2 (generation_id = 2), Appparition des types Ténèbres et Acier
+
+/*
+ Changements par rapport a la génération 1 :
+
+ The Dark and Steel types were introduced.
+Bug was made 0.5× against Poison instead of x2
+Poison was made to 1× against Bug instead of x2
+Ghost was made 2× against Psychic instead of x0
+Ice was made 0.5× against Fire instead of x1
+
+ -- Nouveau type : Ténèbre
+ attaque Ténèbre faible contre Combat, Acier, Ténèbre
+ attaque Ténèbre fort contre Spectre, Psy
+attaque Ténèbre normal contre le reste
+
+ Ténèbre est immunisé contre Electrique, (Electrique inflige x0 à ténèbre)
+ defense Ténèbre forte contre Spectre, Ténèbre ( spectre inflige x0.5 à ténèbre)
+ défense Ténèbre faible contre Combat, Insecte ( Insecte inflige x2 à ténèbre)
+ défense Ténèbre normal contre le reste
+
+ -- Nouveau type : Acier
+
+    attaque Acier faible contre Acier, Feu, Eau, Electrique
+    attaque Acier fort contre Roche, Glace
+    attaque Acier normal contre le reste
+
+Acier est immunisé contre Poison
+ défense Acier forte contre Normal, Vol, Roche, Insecte, Spectre, Acier, Plante, Psy, Glace, Dragon et Ténèbre (Dragon inflige x0.5 à Acier)
+ défense Acier faible contre Combat, Sol, Feu (Feu inflige x2 à Acier)
+ défense Acier normal contre le reste
+
+ */
+
+        -- GENERATION 6 (generation_id = 6), Apparition du type fée
+
+/*
+
+ Changement par rapport a la génération 2 :
+
+ Ghost and Dark were made 1× against Steel instead of ½×.
+
+  -- Nouveau type : Fée
+
+    attaque Fée faible contre Poison, Acier, Feu
+    attaque Fée fort contre Combat, Dragon, Ténèbre
+    attaque Fée normal contre le reste
+
+Fée est immunisé contre Dragon
+ défense Fée forte contre Combat, Insecte, Ténèbre
+ défense Fée faible contre Poison Acier
+ défense Fée normal contre le reste
+ */
