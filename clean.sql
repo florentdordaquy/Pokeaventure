@@ -13,13 +13,13 @@ CREATE TABLE pokemon.Regions(
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 
-CREATE TABLE IF NOT EXISTS pokemon.Generations (
+CREATE TABLE pokemon.Generations (
   id INT NOT NULL AUTO_INCREMENT,
   main_region_id INT NOT NULL,
   release_date DATE NOT NULL,
   FOREIGN KEY (main_region_id) REFERENCES pokemon.Regions(id),
-  PRIMARY KEY (id));
-
+  PRIMARY KEY (id)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 
 CREATE TABLE pokemon.Games (
@@ -40,23 +40,39 @@ CREATE TABLE pokemon.Types(
                                id INT NOT NULL AUTO_INCREMENT,
                                  name_fr VARCHAR(255) NOT NULL,
                                  name_en VARCHAR(255) NOT NULL,
-                                    name_jp VARCHAR(255) NOT NULL,
+                                 name_jp VARCHAR(255) NOT NULL,
                           PRIMARY KEY (id)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 CREATE TABLE pokemon.TypesEffectiveness(
             id INT NOT NULL AUTO_INCREMENT,
-            generation_id INT NOT NULL,
             attack_type_id INT NOT NULL,
             target_type_id INT NOT NULL,
-            effectiveness FLOAT NOT NULL, -- 0, 1, 2, 4, 8, 16
-            FOREIGN KEY (generation_id) REFERENCES pokemon.Generations(id),
+            effectiveness_g1 FLOAT ,
+            effectiveness_g2 FLOAT ,
+            effectiveness_g6 FLOAT ,
             FOREIGN KEY (attack_type_id) REFERENCES pokemon.Types(id),
             FOREIGN KEY (target_type_id) REFERENCES pokemon.Types(id),
             PRIMARY KEY (id)
 ) ENGINE = InnoDB DEFAULT CHARSET=utf8;
 
 CREATE TABLE pokemon.Statistics(
+    id INT NOT NULL AUTO_INCREMENT,
+    name_fr VARCHAR(255) NOT NULL,
+    name_en VARCHAR(255) NOT NULL,
+    name_jp VARCHAR(255) NOT NULL,
+    PRIMARY KEY (id)
+);
+
+CREATE TABLE pokemon.EggGroup(
+    id INT NOT NULL AUTO_INCREMENT,
+    name_fr VARCHAR(255) NOT NULL,
+    name_en VARCHAR(255) NOT NULL,
+    name_jp VARCHAR(255) NOT NULL,
+    PRIMARY KEY (id)
+);
+
+CREATE TABLE pokemon.Shapes(
     id INT NOT NULL AUTO_INCREMENT,
     name_fr VARCHAR(255) NOT NULL,
     name_en VARCHAR(255) NOT NULL,
@@ -91,10 +107,18 @@ CREATE TABLE pokemon.NationalDex(
         ev_yield_1_id INT NOT NULL,
         ev_yield_2_id INT NOT NULL,
 
+        FOREIGN KEY (region_id) REFERENCES pokemon.Regions(id),
+        FOREIGN KEY (type_1) REFERENCES pokemon.Types(id),
+        FOREIGN KEY (type_2) REFERENCES pokemon.Types(id),
 
+         -- FOREIGN KEY (egg_group_id) REFERENCES pokemon.EggGroup(id),
 
+        -- FOREIGN KEY (shape_id) REFERENCES pokemon.Shapes(id),
 
+        --   FOREIGN KEY (ev_yield_1_id) REFERENCES pokemon.Statistics(id),
 
+        -- FOREIGN KEY (ev_yield_2_id) REFERENCES pokemon.Statistics(id),
 
+        PRIMARY KEY (id)
+) ENGINE = InnoDB DEFAULT CHARSET=utf8;
 
-)

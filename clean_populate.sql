@@ -72,150 +72,59 @@ INSERT INTO pokemon.Games (id, generation_id, region_id, name_fr, name_en, name_
 
 INSERT INTO pokemon.Types (id, name_fr, name_en, name_jp) VALUES
 
-    (1, 'Plante', 'Grass', 'くさタイプ'),
-    (2, 'Poison', 'Poison', 'どくタイプ'),
-    (3, 'Feu', 'Fire', 'ほのおタイプ'),
-    (4, 'Vol', 'Flying', 'ひこうタイプ'),
-    (5, 'Eau', 'Water', 'みずタイプ'),
-    (6, 'Insecte', 'Bug', 'むしタイプ'),
-    (7, 'Normal', 'Normal', 'ノーマルタイプ'),
-    (8, 'Electrique', 'Electric', 'でんきタイプ'),
-    (9, 'Sol', 'Ground', 'じめんタイプ'),
-    (10, 'Combat', 'Fighting', 'かくとうタイプ'),
-    (11, 'Psy', 'Psychic', 'エスパータイプ'),
-    (12, 'Roche', 'Rock', 'いわタイプ'),
-    (13, 'Glace', 'Ice', 'こおりタイプ'),
-    (14, 'Spectre', 'Ghost', 'ゴーストタイプ'),
-    (15, 'Dragon', 'Dragon', 'ドラゴンタイプ'),
-    (16, 'Ténèbres', 'Dark', 'あくタイプ'),
-    (17, 'Acier', 'Steel', 'はがねタイプ'),
-    (18, 'Fée', 'Fairy', 'フェアリータイプ');
+(1, 'Acier', 'Steel', 'はがねタイプ'),
+(2, 'Combat', 'Fighting', 'かくとうタイプ'),
+(3, 'Dragon', 'Dragon', 'ドラゴンタイプ'),
+(4, 'Eau', 'Water', 'みずタイプ'),
+(5, 'Électrique', 'Electric', 'でんきタイプ'),
+(6, 'Fée', 'Fairy', 'フェアリータイプ'),
+(7, 'Feu', 'Fire', 'ほのおタイプ'),
+(8, 'Glace', 'Ice', 'こおりタイプ'),
+(9, 'Insecte', 'Bug', 'むしタイプ'),
+(10, 'Normal', 'Normal', 'ノーマルタイプ'),
+(11, 'Plante', 'Grass', 'くさタイプ'),
+(12, 'Poison', 'Poison', 'どくタイプ'),
+(13, 'Psy', 'Psychic', 'エスパータイプ'),
+(14, 'Roche', 'Rock', 'いわタイプ'),
+(15, 'Sol', 'Ground', 'じめんタイプ'),
+(16, 'Spectre', 'Ghost', 'ゴーストタイプ'),
+(17, 'Ténèbres', 'Dark', 'あくタイプ'),
+(18, 'Vol', 'Flying', 'ひこうタイプ');
 
-INSERT INTO pokemon.TypesEffectiveness (id, generation_id, attack_type_id, target_type_id, effectiveness) VALUES
-
-        -- GENERATION 1 (generation_id = 1) , Les types Ténèbres, Acier et Fée ne sont pas pris en compte
-
-/*
-    attaque Plante faible (x0,5) contre Vol, Poison, Insecte, Feu, Plante, Dragon
-    attaque Plante fort (x2) contre Sol, Roche, Eau
-    attaque plante normal (x1) contre le reste
-
-    attaque Poison faible (x0,5) contre Poison, Sol, Roche, Spectre
-    attaque Poison fort (x2) contre Plante, Insecte
-    attaque Poison normal (x1) contre le reste
-
-    attaque Feu faible (x0,5) contre Roche, Feu, Eau, Dragon
-    attaque Feu fort (x2) contre Insecte, Plante, Glace
-    attaque Feu normal (x1) contre le reste
-
-    attaque Vol faible (x0,5) contre Roche, Électrique
-    attaque Vol fort (x2) contre Combat, Insecte, Plante
-    attaque Vol normal (x1) contre le reste
-
-    attaque Eau faible (x0,5) contre Plante, Eau, Dragon
-    attaque Eau fort (x2) contre Sol, Roche, Feu
-    attaque Eau normal (x1) contre le reste
-
-    attaque Insecte faible (x0,5) contre Combat, Vol, Spectre, Feu
-    attaque Insecte fort (x2) contre Poison, Plante, Psy
-    attaque Insecte normal (x1) contre le reste
-
-    attaque inefficace (x0) contre Spectre
-    attaque Normal faible (x0,5) contre Roche
-    attaque Normal fort (x2) contre Aucun
-    attaque Normal normal (x1) contre le reste
-
-    attaque Electrique inefficace (x0) contre Sol
-    attaque Électrique faible (x0,5) contre Plante, Electrique, Dragon
-    attaque Électrique fort (x2) contre Eau, Vol
-    attaque Électrique normal (x1) contre le reste
-
-    attaque sol inefficace (x0) contre Vol
-    attaque Sol faible (x0,5) contre Insecte et Plante
-    attaque Sol fort (x2) contre Poison, Roche, Feu, Electrique
-    attaque Sol normal (x1) contre le reste
-
-    attaque Combat inefficace (x0) contre Spectre
-    attaque Combat faible (x0,5) contre Poison, Vol, Psy, Insecte
-    attaque Combat fort (x2) contre Normal, Roche, Glace
-    attaque Combat normal (x1) contre le reste
-
-    attaque Psy faible (x0,5) contre Psy
-    attaque Psy fort (x2) contre Combat, Poison
-    attaque Psy normal (x1) contre le reste
-
-    attaque Roche faible (x0,5) contre Combat, Sol
-    attaque Roche fort (x2) contre Vol, Insecte, Feu, Glace
-    attaque Roche normal (x1) contre le reste
-
-    attaque Glace faible (x0,5) contre Eau, Glace
-    attaque Glace fort (x2) contre Sol, Vol, Plante, Dragon
-    attaque Glace normal (x1) contre le reste
-
-    attaque Spectre inefficace (x0) contre Normal et Psy
-    attaque Spectre faible (x0,5) contre Aucun
-    attaque Spectre fort (x2) contre Ghost
-    attaque Spectre normal (x1) contre le reste
-
-    attaque Dragon faible (x0,5) contre Aucun
-    attaque Dragon fort (x2) contre Dragon
-    attaque Dragon normal (x1) contre le reste
-
- */
-
-        -- GENERATION 2 (generation_id = 2), Appparition des types Ténèbres et Acier
-
-/*
- Changements par rapport a la génération 1 :
-
- The Dark and Steel types were introduced.
-Bug was made 0.5× against Poison instead of x2
-Poison was made to 1× against Bug instead of x2
-Ghost was made 2× against Psychic instead of x0
-Ice was made 0.5× against Fire instead of x1
-
- -- Nouveau type : Ténèbre
- attaque Ténèbre faible contre Combat, Acier, Ténèbre
- attaque Ténèbre fort contre Spectre, Psy
-attaque Ténèbre normal contre le reste
-
- Ténèbre est immunisé contre Electrique, (Electrique inflige x0 à ténèbre)
- defense Ténèbre forte contre Spectre, Ténèbre ( spectre inflige x0.5 à ténèbre)
- défense Ténèbre faible contre Combat, Insecte ( Insecte inflige x2 à ténèbre)
- défense Ténèbre normal contre le reste
-
- -- Nouveau type : Acier
-
-    attaque Acier faible contre Acier, Feu, Eau, Electrique
-    attaque Acier fort contre Roche, Glace
-    attaque Acier normal contre le reste
-
-Acier est immunisé contre Poison
- défense Acier forte contre Normal, Vol, Roche, Insecte, Spectre, Acier, Plante, Psy, Glace, Dragon et Ténèbre (Dragon inflige x0.5 à Acier)
- défense Acier faible contre Combat, Sol, Feu (Feu inflige x2 à Acier)
- défense Acier normal contre le reste
-
- */
-
-        -- GENERATION 6 (generation_id = 6), Apparition du type fée
-
-/*
-
- Changement par rapport a la génération 2 :
-
- Ghost and Dark were made 1× against Steel instead of ½×.
-
-  -- Nouveau type : Fée
-
-    attaque Fée faible contre Poison, Acier, Feu
-    attaque Fée fort contre Combat, Dragon, Ténèbre
-    attaque Fée normal contre le reste
-
-Fée est immunisé contre Dragon
- défense Fée forte contre Combat, Insecte, Ténèbre
- défense Fée faible contre Poison Acier
- défense Fée normal contre le reste
- */
-
-        (1,1,1,1,0.5);
-
+INSERT INTO pokemon.typeseffectiveness ( attack_type_id, target_type_id, effectiveness_g1, effectiveness_g2, effectiveness_g6) VALUES
+-- Acier
+(1,1,null,0.5,0.5),(1,2,null,1,1),(1,3,null,1,1),(1,4,null,0.5,0.5),(1,5,null,0.5,0.5),(1,6,null,null,2),(1,7,null,0.5,0.5),(1,8,null,2,2),(1,9,null,1,1),(1,10,null,1,1),(1,11,null,1,1),(1,12,null,1,1),(1,13,null,1,1),(1,14,null,2,2),(1,15,null,1,1),(1,16,null,1,1),(1,17,null,1,1),
+-- Combat
+(1,18,null,1,1),(2,1,null,2,2),(2,2,1,1,1),(2,3,1,1,1),(2,4,1,1,1),(2,5,1,1,1),(2,6,null,null,0.5),(2,7,1,1,1),(2,8,2,2,2),(2,9,0.5,0.5,0.5),(2,10,2,2,2),(2,11,1,1,1),(2,12,0.5,0.5,0.5),(2,13,0.5,0.5,0.5),(2,14,2,2,2),(2,15,1,1,1),(2,16,0,0,0),(2,17,null,0.5,0.5),(2,18,0.5,0.5,0.5),(3,1,null,0.5,0.5),
+-- Dragon
+(3,2,1,1,1),(3,3,2,2,2),(3,4,1,1,1),(3,5,1,1,1),(3,6,null,null,0),(3,7,1,1,1),(3,8,1,1,1),(3,9,1,1,1),(3,10,1,1,1),(3,11,1,1,1),(3,12,1,1,1),(3,13,1,1,1),(3,14,1,1,1),(3,15,1,1,1),(3,16,1,1,1),(3,17,null,1,1),(3,18,1,1,1),
+-- Eau
+(4,1,null,1,1),(4,2,1,1,1),(4,3,0.5,0.5,0.5),(4,4,0.5,0.5,0.5),(4,5,1,1,1),(4,6,null,null,1),(4,7,2,2,2),(4,8,1,1,1),(4,9,1,1,1),(4,10,1,1,1),(4,11,0.5,0.5,0.5),(4,12,1,1,1),(4,13,1,1,1),(4,14,2,2,2),(4,15,2,2,2),(4,16,1,1,1),(4,17,null,1,1),(4,18,1,1,1),
+-- Électrique
+(5,1,null,1,1),(5,2,1,1,1),(5,3,0.5,0.5,0.5),(5,4,2,2,2),(5,5,0.5,0.5,0.5),(5,6,null,null,1),(5,7,1,1,1),(5,8,1,1,1),(5,9,1,1,1),(5,10,1,1,1),(5,11,0.5,0.5,0.5),(5,12,1,1,1),(5,13,1,1,1),(5,14,1,1,1),(5,15,0,0,0),(5,16,1,1,1),(5,17,null,2,2),(5,18,2,2,2),
+-- Fée
+(6,1,null,null,0.5),(6,2,null,null,2),(6,3,null,null,2),(6,4,null,null,1),(6,5,null,null,1),(6,6,null,null,1),(6,7,null,null,0.5),(6,8,null,null,1),(6,9,null,null,1),(6,10,null,null,1),(6,11,null,null,1),(6,12,null,null,0.5),(6,13,null,null,1),(6,14,null,null,1),(6,15,null,null,1),(6,16,null,null,1),(6,17,null,null,2),(6,18,null,null,1),
+-- Feu
+(7,1,null,2,2),(7,2,1,1,1),(7,3,0.5,0.5,0.5),(7,4,0.5,0.5,0.5),(7,5,1,1,1),(7,6,null,null,1),(7,7,0.5,0.5,0.5),(7,8,2,2,2),(7,9,2,2,2),(7,10,1,1,1),(7,11,2,2,2),(7,12,1,1,1),(7,13,1,1,1),(7,14,0.2,0.2,0.2),(7,15,1,1,1),(7,16,1,1,1),(7,17,null,1,1),(7,18,1,1,1),
+-- Glace
+(8,1,null,5,5),(8,2,1,1,1),(8,3,2,2,2),(8,4,0.5,0.5,0.5),(8,5,1,1,1),(8,6,null,null,1),(8,7,1,0.5,0.5),(8,8,0.5,0.5,0.5),(8,9,1,1,1),(8,10,1,1,1),(8,11,2,2,2),(8,12,1,1,1),(8,13,1,1,1),(8,14,1,1,1),(8,15,2,2,2),(8,16,1,1,1),(8,17,null,2,2),(8,18,2,2,2),
+-- Insecte
+(9,1,null,0.5,0.5),(9,2,0.5,0.5,0.5),(9,3,1,1,1),(9,4,1,1,1),(9,5,1,1,1),(9,6,null,null,0.5),(9,7,0.5,0.5,0.5),(9,8,1,1,1),(9,9,1,1,1),(9,10,1,1,1),(9,11,2,2,2),(9,12,2,0.5,0.5),(9,13,2,2,2),(9,14,1,1,1),(9,15,1,1,1),(9,16,0.5,0.5,0.5),(9,17,null,0.5,0.5),(9,18,0.5,0.5,0.5),
+-- Normal
+(10,1,null,0.5,0.5),(10,2,1,1,1),(10,3,1,1,1),(10,4,1,1,1),(10,5,1,1,1),(10,6,null,null,1),(10,7,1,1,1),(10,8,1,1,1),(10,9,1,1,1),(10,10,1,1,1),(10,11,1,1,1),(10,12,1,1,1),(10,13,1,1,1),(10,14,0.5,0.5,0.5),(10,15,1,1,1),(10,16,0,0,0),(10,17,null,1,1),(10,18,1,1,1),
+-- Plante
+(11,1,null,0.5,0.5),(11,2,1,1,1),(11,3,0.5,0.5,0.5),(11,4,2,2,2),(11,5,1,1,1),(11,6,null,null,1),(11,7,0.5,0.5,0.5),(11,8,1,1,1),(11,9,0.5,0.5,0.5),(11,10,1,1,1),(11,11,0.5,0.5,0.5),(11,12,0.5,0.5,0.5),(11,13,1,1,1),(11,14,2,2,2),(11,15,2,2,2),(11,16,1,1,1),(11,17,null,0.5,0.5),(11,18,0.5,0.5,0.5),
+-- Poison
+(12,1,null,0,0),(12,2,1,1,1),(12,3,1,1,1),(12,4,1,1,1),(12,5,1,1,1),(12,6,null,null,2),(12,7,1,1,1),(12,8,1,1,1),(12,9,2,1,1),(12,10,1,1,1),(12,11,2,2,2),(12,12,0.5,0.5,0.5),(12,13,1,1,1),(12,14,0.5,0.5,0.5),(12,15,0.5,0.5,0.5),(12,16,0.5,0.5,0.5),(12,17,null,1,1),(12,18,1,1,1),
+-- Psy
+(13,1,null,0.5,0.5),(13,2,2,2,2),(13,3,1,1,1),(13,4,1,1,1),(13,5,1,1,1),(13,6,null,null,1),(13,7,1,1,1),(13,8,1,1,1),(13,9,1,1,1),(13,10,1,1,1),(13,11,1,1,1),(13,12,2,2,2),(13,13,0.5,0.5,0.5),(13,14,1,1,1),(13,15,1,1,1),(13,16,1,1,1),(13,17,null,1,1),(13,18,1,1,1),
+-- Roche
+(14,1,null,0.5,0.5),(14,2,0.5,0.5,0.5),(14,3,1,1,1),(14,4,1,1,1),(14,5,1,1,1),(14,6,null,null,1),(14,7,2,2,2),(14,8,2,2,2),(14,9,2,2,2),(14,10,1,1,1),(14,11,1,1,1),(14,12,1,1,1),(14,13,1,1,1),(14,14,1,1,1),(14,15,0.5,0.5,0.5),(14,16,1,1,1),(14,17,null,2,2),(14,18,2,2,2),
+-- Sol
+(15,1,null,2,2),(15,2,1,1,1),(15,3,1,1,1),(15,4,1,1,1),(15,5,2,2,2),(15,6,null,null,1),(15,7,2,2,2),(15,8,1,1,1),(15,9,0.5,0.5,0.5),(15,10,1,1,1),(15,11,0.5,0.5,0.5),(15,12,2,2,2),(15,13,1,1,1),(15,14,2,2,2),(15,15,1,1,1),(15,16,1,1,1),(15,17,null,0,0),(15,18,0,0,0),
+-- Spectre
+(16,1,null,0.5,1),(16,2,1,1,1),(16,3,1,1,1),(16,4,1,1,1),(16,5,1,1,1),(16,6,null,null,1),(16,7,1,1,1),(16,8,1,1,1),(16,9,1,1,1),(16,10,0,0,0),(16,11,1,1,1),(16,12,1,1,1),(16,13,0,2,2),(16,14,1,1,1),(16,15,1,1,1),(16,16,2,2,2),(16,17,null,1,1),(16,18,1,1,1),
+-- Ténèbre
+(17,1,null,0.5,1),(17,2,null,0.5,0.5),(17,3,null,1,1),(17,4,null,1,1),(17,5,null,1,1),(17,6,null,null,0.5),(17,7,null,1,1),(17,8,null,1,1),(17,9,null,1,1),(17,10,null,1,1),(17,11,null,1,1),(17,12,null,1,1),(17,13,null,2,2),(17,14,null,1,1),(17,15,null,1,1),(17,16,null,2,2),(17,17,null,0.5,0.5),(17,18,null,1,1),
+-- Vol
+(18,1,null,0.5,0.5),(18,2,2,2,2),(18,3,1,1,1),(18,4,1,1,1),(18,5,0.5,0.5,0.5),(18,6,null,null,1),(18,7,1,1,1),(18,8,1,1,1),(18,9,2,2,2),(18,10,1,1,1),(18,11,2,2,2),(18,12,1,1,1),(18,13,1,1,1),(18,14,0.5,0.5,0.5),(18,15,1,1,1),(18,16,1,1,1),(18,17,null,1,1),(18,18,1,1,1);
