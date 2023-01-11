@@ -54,7 +54,7 @@ Fan site Pokémon, regroupant toutes les informations importantes sur les jeux d
   - Création de la base de donnée
     - [x] Tables pour les Générations, les Jeux, les Régions
     - [x] Table pour les Types et leur efficacité 
-    - [ ] Table pour les status
+    - [x] Table pour les status
     - [ ] Table pour le pokédex national
     - [ ] Table GigaMax, MégaEvolutions
     - [ ] Table Groupe Oeuf
@@ -105,6 +105,8 @@ Informations générales (FIXES):
 - Type 1
 - Type 2
 - Evolutions
+- Taille
+- Poids
 - Taux de capture (semble ne pas évoluer selon les jeux)
 - Groupes d'œufs
 - Nombre de pas pour éclore
@@ -120,8 +122,6 @@ Informations differents selon les jeux :
 - Lieux d'obtention
 - Méthode d'obtention
 - Méthode de shasse
-- Taille
-- Poids
 - Genre (%masculin, %féminin, %neutre)
 - Bonheur
 
