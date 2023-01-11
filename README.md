@@ -61,7 +61,7 @@ Fan site Pokémon, regroupant toutes les informations importantes sur les jeux d
     - [ ] 
     - 
       - [ ] Table pour le dex regional
-      - [x] Table pour les évolutions
+      - [ ] Table pour les évolutions
       - [ ] Table pour les lieux 
       - [ ] Table des pokémons selon le lieu et le jeu + le % de chance de le trouver
       - [ ] Table pour les attaques + linkage avec les types, les status et les pokemons
@@ -73,8 +73,6 @@ Fan site Pokémon, regroupant toutes les informations importantes sur les jeux d
       - [ ] Table pour les combats (nom, prénom, pseudo, email, mot de passe, etc...)
       - 
     
-    
-  - [ ] Remplissage de la base de donnée 'Pokeaventure'
 - ### Java  
   - [ ] Système de connexion - déconnexion - inscription - mot de passe oublié - confirmation par mail - ...
   - [ ] Système de création de dresseur (profil)
