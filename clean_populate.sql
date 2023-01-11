@@ -128,3 +128,59 @@ INSERT INTO pokemon.typeseffectiveness ( attack_type_id, target_type_id, effecti
 (17,1,null,0.5,1),(17,2,null,0.5,0.5),(17,3,null,1,1),(17,4,null,1,1),(17,5,null,1,1),(17,6,null,null,0.5),(17,7,null,1,1),(17,8,null,1,1),(17,9,null,1,1),(17,10,null,1,1),(17,11,null,1,1),(17,12,null,1,1),(17,13,null,2,2),(17,14,null,1,1),(17,15,null,1,1),(17,16,null,2,2),(17,17,null,0.5,0.5),(17,18,null,1,1),
 -- Vol
 (18,1,null,0.5,0.5),(18,2,2,2,2),(18,3,1,1,1),(18,4,1,1,1),(18,5,0.5,0.5,0.5),(18,6,null,null,1),(18,7,1,1,1),(18,8,1,1,1),(18,9,2,2,2),(18,10,1,1,1),(18,11,2,2,2),(18,12,1,1,1),(18,13,1,1,1),(18,14,0.5,0.5,0.5),(18,15,1,1,1),(18,16,1,1,1),(18,17,null,1,1),(18,18,1,1,1);
+
+INSERT INTO pokemon.Statistics (id, name_fr, name_en, name_jp) VALUES
+        (1, 'PV', 'PV', 'HP'),
+        (2, 'Attaque', 'Attaque', '攻撃'),
+        (3, 'Défense', 'Défense', '防御'),
+        (4, 'Attaque Spé.', 'Attaque Spé.', '特攻'),
+        (5, 'Défense Spé.', 'Défense Spé.', '特防'),
+        (6, 'Vitesse', 'Vitesse', '素早さ');
+
+INSERT INTO pokemon.EggGroup (id, name_fr, name_en, name_jp) VALUES
+
+(1, 'Aérien', 'Flying', '空の'),
+(2, 'Amorphe', 'Amorphous', '不定の'),
+(3, 'Aquatique 1', 'Water 1', '水の'),
+(4, 'Aquatique 2', 'Water 2', '水の'),
+(5, 'Aquatique 3', 'Water 3', '水の'),
+(6, 'Draconique', 'Dragon', '龍の'),
+(7, 'Féerique', 'Fairy', '妖精の'),
+(8, 'Humanoïde', 'Human-Like', '人型の'),
+(9, 'Inconnu', 'Unknow', '不明の'),
+(10, 'Insectoïde', 'Bug', '昆虫の'),
+(11, 'Métamorph', 'Ditto', '変化の'),
+(12, 'Minéral', 'Mineral', '岩の'),
+(13, 'Monstrueux', 'Monster', 'モンスターの'),
+(14, 'Terrestre', 'Field', '陸の'),
+(15, 'Végétal', 'Grass', '草の'),
+(16, 'Aucun', 'None', '飛行の');
+
+INSERT INTO pokemon.Categorie (id, name_fr, name_en, name_jp) VALUES
+        (1, 'Normal','', ''),
+        (2, 'Starter', '', ''),
+        (3, 'Légendaire', '', ''),
+        (4, 'Fabuleux', '', ''),
+        (5, 'Ultra-Chimère', '', ''),
+        (6, 'Méga-évolution','',''),
+        (7, 'Dominant', '', '');
+
+INSERT INTO pokemon.Shapes(id, name_fr, name_en, name_jp) VALUES
+        (1, 'Quadrupède', 'Quadruped', '四足の'),
+        (2, 'Bipède', 'Biped', '二足の'),
+        (3, 'Arachnide', 'Arachnid', '蜘蛛の'),
+        (4, 'Serpentiforme', 'Serpentine', '蛇の'),
+        (5, 'Insecte', 'Insect', '昆虫の'),
+        (6, 'Poisson', 'Fish', '魚の');
+
+INSERT INTO pokemon.NationalDex(national_pokedex_id, main_region_id,
+                                name_fr, name_en, name_jp,
+                                specie_fr, specie_en, specie_jp,
+                                category_id,
+                                type_1_id, type_2_id,
+                                height, weight, egg_group_id, step_to_hatch,
+                                capture_rate,
+                                shape_id,
+                                ev_yield_1, ev_yield_2, ev_yield_1_id, ev_yield_2_id) VALUES
+
+    ( )
