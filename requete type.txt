@@ -1,18 +1,29 @@
--- Requete en SQL
-    SELECT A.name_fr AS 'Type attaquant',
-           MAX(CASE WHEN D.name_fr = 'Acier' THEN effectiveness_g1 END) AS 'Acier',
-           MAX(CASE WHEN D.name_fr = 'Combat' THEN effectiveness_g1 END) AS 'Combat',
-           MAX(CASE WHEN D.name_fr = 'Dragon' THEN effectiveness_g1 END) AS 'Dragon',
 
-            MAX(CASE WHEN D.name_fr = 'Vol' THEN effectiveness_g1 END) AS 'Vol'
+SELECT A.name_fr AS 'Type attaquant',
+    MAX(CASE WHEN D.name_fr = 'Acier' THEN effectiveness_g1 END) AS 'Acier',
+    MAX(CASE WHEN D.name_fr = 'Combat' THEN effectiveness_g1 END) AS 'Combat',
+    MAX(CASE WHEN D.name_fr = 'Dragon' THEN effectiveness_g1 END) AS 'Dragon',
+    MAX(CASE WHEN D.name_fr = 'Eau' THEN effectiveness_g1 END) AS 'Eau',
+    MAX(CASE WHEN D.name_fr = 'Électrique' THEN effectiveness_g1 END) AS 'Electrik',
+    MAX(CASE WHEN D.name_fr = 'Fée' THEN effectiveness_g1 END) AS 'Fée',
+    MAX(CASE WHEN D.name_fr = 'Feu' THEN effectiveness_g1 END) AS 'Feu',
+    MAX(CASE WHEN D.name_fr = 'Glace' THEN effectiveness_g1 END) AS 'Glace',
+    MAX(CASE WHEN D.name_fr = 'Insecte' THEN effectiveness_g1 END) AS 'Insecte',
+    MAX(CASE WHEN D.name_fr = 'Normal' THEN effectiveness_g1 END) AS 'Normal',
+    MAX(CASE WHEN D.name_fr = 'Plante' THEN effectiveness_g1 END) AS 'Plante',
+    MAX(CASE WHEN D.name_fr = 'Poison' THEN effectiveness_g1 END) AS 'Poison',
+    MAX(CASE WHEN D.name_fr = 'Psy' THEN effectiveness_g1 END) AS 'Psy',
+    MAX(CASE WHEN D.name_fr = 'Roche' THEN effectiveness_g1 END) AS 'Roche',
+    MAX(CASE WHEN D.name_fr = 'Sol' THEN effectiveness_g1 END) AS 'Sol',
+    MAX(CASE WHEN D.name_fr = 'Spectre' THEN effectiveness_g1 END) AS 'Spectre',
+    MAX(CASE WHEN D.name_fr = 'Ténèbres' THEN effectiveness_g1 END) AS 'Ténèbres',
+    MAX(CASE WHEN D.name_fr = 'Vol' THEN effectiveness_g1 END) AS 'Vol'
     FROM pokemon.TypesEffectiveness TE
         JOIN pokemon.Types A ON TE.attack_type_id = A.id
         JOIN pokemon.Types D ON TE.target_type_id = D.id
     -- WHERE A.name_fr = 'Psy' pour afficher que une ligne
     GROUP BY A.id
 
-
--- Requête avec une boucle en JAVA
         String query = "SELECT A.name_fr as typeAttaquant";
     for (int i = 1; i <= 18; i++) {
     query += f", MAX(CASE WHEN D.id = {i} THEN effectiveness_g1 END) AS 'typeDef{i}'";
