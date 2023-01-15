@@ -12,18 +12,7 @@ INSERT INTO pokemon.Regions (id, name_fr, name_en, name_jp)VALUES
                                                               ( 9, 'Hisui', 'Hisui', 'ヒスイ地方'),
                                                               ( 10, 'Paldea', 'Paldea', 'パルデア地方');
 
-INSERT INTO pokemon.Generations (id, main_region_id, release_date)VALUES
-                              ( 1, 1, '1996-02-27'),
-                              ( 2, 2, '1999-04-01'),
-                              ( 3, 3, '2002-04-26'),
-                              ( 4, 4, '2006-04-28'),
-                              ( 5, 5, '2010-09-18'),
-                              ( 6, 6, '2013-11-18'),
-                              ( 7, 7, '2016-11-18'),
-                              ( 8, 8, '2019-11-15'),
-                              ( 9, 9, '2022-11-15');
-
-INSERT INTO pokemon.Games (id, generation_id, region_id, name_fr, name_en, name_jp ,platform, realease_date) VALUES
+INSERT INTO pokemon.Games (id, generation, region_id, name_fr, name_en, name_jp ,platform, realease_date) VALUES
     (1, 1, 1, 'Pokémon Rouge', 'Pokémon Red', 'ポケットモンスター赤', 'GB', '1996-02-27'),
     (2, 1, 1, 'Pokémon Bleu', 'Pokémon Blue', 'ポケットモンスター青', 'GB', '1996-02-27'),
     (3, 1, 1, 'Pokémon Jaune', 'Pokémon Yellow', 'ポケットモンスター黄', 'GB', '1998-10-18'),
@@ -173,14 +162,83 @@ INSERT INTO pokemon.Shapes(id, name_fr, name_en, name_jp) VALUES
         (5, 'Insecte', 'Insect', '昆虫の'),
         (6, 'Poisson', 'Fish', '魚の');
 
-INSERT INTO pokemon.NationalDex(national_pokedex_id, main_region_id,
-                                name_fr, name_en, name_jp,
-                                specie_fr, specie_en, specie_jp,
-                                category_id,
-                                type_1_id, type_2_id,
-                                height, weight, egg_group_id, step_to_hatch,
-                                capture_rate,
-                                shape_id,
-                                ev_yield_1, ev_yield_2, ev_yield_1_id, ev_yield_2_id) VALUES
+INSERT INTO pokemon.NationalDex(national_dex_number, main_region_id, name_fr, name_en, name_jp, specie_fr, specie_en, specie_jp, category_id, type_1_id, type_2_id, height, weight, egg_group_id, step_to_hatch, capture_rate, shape_id) VALUES
 
-    ( )
+    (1, 1, 'Bulbizare', 'Bulbasaur', 'フシギダネ', 'Graine', 'Seed', 'たねポケモン', 1, 12, 4, 0.7, 6.9, 15, 5355, 45, 1),
+    (2, 1, 'Herbizarre', 'Ivysaur', 'フシギソウ', 'Graine', 'Seed', 'たねポケモン', 1, 12, 4, 1, 13, 15, 5355, 45, 1),
+    (3, 1, 'Florizarre', 'Venusaur', 'フシギバナ', 'Graine', 'Seed', 'たねポケモン', 1, 12, 4, 2, 100, 15, 5355, 45, 1),
+    (4, 1, 'Salamèche', 'Charmander', 'ヒトカゲ', 'Lézard', 'Lizard', 'ヒトカゲポケモン', 1, 10, null, 0.6, 8.5, 15, 5355, 45, 2),
+    (5, 1, 'Reptincel', 'Charmeleon', 'リザード', 'Flamme', 'Flame', 'リザードポケモン', 1, 10, null, 1.1, 19, 15, 5355, 45, 2),
+    (6, 1, 'Dracaufeu', 'Charizard', 'リザードン', 'Flamme', 'Flame', 'リザードンポケモン', 1, 10, 3, 1.7, 90.5, 15, 5355, 45, 2),
+    (7, 1, 'Carapuce', 'Squirtle', 'ゼニガメ', 'Tortue', 'Turtle', 'カメールポケモン', 1, 11, null, 0.5, 9, 15, 5355, 45, 5),
+    (8, 1, 'Carabaffe', 'Wartortle', 'カメール', 'Tortue', 'Turtle', 'カメールポケモン', 1, 11, null, 1, 22.5, 15, 5355, 45, 5),
+    (9, 1, 'Tortank', 'Blastoise', 'カメックス', 'Canon', 'Shellfish', 'カメックスポケモン', 1, 11, null, 1.6, 85.5, 15, 5355, 45, 5),
+    (10, 1, 'Chenipan', 'Caterpie', 'キャタピー', 'Chenipan', 'Worm', 'チョウチンポケモン', 1, 10, null, 0.3, 2.9, 10, 5355, 255, 5),
+    (11, 1, 'Chrysacier', 'Metapod', 'トランセル', 'Chrysacier', 'Cocoon', 'カタツムリポケモン', 1, 10, null, 0.7, 9.9, 10, 5355, 120, 5),
+    (12, 1, 'Papilusion', 'Butterfree', 'バタフリー', 'Papillon', 'Butterfly', 'バタフリーポケモン', 1, 10, 3, 1.1, 32, 10, 5355, 45, 5),
+    (13, 1, 'Aspicot', 'Weedle', 'ビードル', 'Cocon', 'Hairy Bug', 'ハチミツポケモン', 1, 10, 4, 0.3, 3.2, 10, 5355, 255, 5),
+    (14, 1, 'Coconfort', 'Kakuna', 'コクーン', 'Cocon', 'Cocoon', 'カタツムリポケモン', 1, 10, 4, 0.6, 10, 10, 5355, 120, 5),
+    (15, 1, 'Dardargnan', 'Beedrill', 'スピアー', 'Aiguille', 'Poison Bee', 'ハチミツポケモン', 1, 10, 4, 1, 29.5, 10, 5355, 45, 5),
+    (16, 1, 'Roucool', 'Pidgey', 'ポッポ', 'Petit Piaf', 'Tiny Bird', 'コケコッコー', 1, 1, 3, 0.3, 1.8, 5, 5355, 255, 2),
+    (17, 1, 'Roucoups', 'Pidgeotto', 'ピジョン', 'Piaf', 'Bird', 'コケコッコー', 1, 1, 3, 1.1, 30, 5, 5355, 120, 2),
+    (18, 1, 'Roucarnage', 'Pidgeot', 'ピジョット', 'Piaf', 'Bird', 'コケコッコー', 1, 1, 3, 1.5, 39.5, 5, 5355, 45, 2),
+    (19, 1, 'Rattata', 'Rattata', 'コラッタ', 'Rat', 'Mouse', 'ミニポケモン', 1, 1, null, 0.3, 3.5, 5, 5355, 255, 2),
+    (20, 1, 'Rattatac', 'Raticate', 'ラッタ', 'Rat', 'Mouse', 'ミニポケモン', 1, 1, null, 0.7, 18.5, 5, 5355, 127, 2),
+    (21, 1, 'Piafabec', 'Spearow', 'オニスズメ', 'Pic', 'Tiny Bird', 'ハトポケモン', 1, 1, 3, 0.3, 2, 5, 5355, 255, 2),
+    (22, 1, 'Rapasdepic', 'Fearow', 'オニドリル', 'Pic', 'Beak', 'ハトポケモン', 1, 1, 3, 1.2, 38, 5, 5355, 90, 2),
+    (23, 1, 'Abo', 'Ekans', 'アーボ', 'Serpent', 'Snake', 'ヘビポケモン', 1, 4, null, 2, 6.9, 5, 5355, 255, 4),
+    (24, 1, 'Arbok', 'Arbok', 'アーボック', 'Cobra', 'Cobra', 'ヘビポケモン', 1, 4, null, 3.5, 65, 5, 5355, 90, 4),
+    (25, 1, 'Pikachu', 'Pikachu', 'ピカチュウ', 'Souris', 'Mouse', 'マウスポケモン', 1, 13, null, 0.4, 6, 5, 5355, 190, 2),
+    (26, 1, 'Raichu', 'Raichu', 'ライチュウ', 'Souris', 'Mouse', 'マウスポケモン', 1, 13, null, 0.8, 30, 5, 5355, 75, 2),
+    (27, 1, 'Sabelette', 'Sandshrew', 'サンド', 'Sable', 'Mouse', 'ミニポケモン', 1, 5, null, 0.6, 12, 5, 5355, 255, 2),
+    (28, 1, 'Sablaireau', 'Sandslash', 'サンドパン', 'Sable', 'Mouse', 'ミニポケモン', 1, 5, null, 1, 29.5, 5, 5355, 90, 2);
+
+INSERT INTO pokemon.Evolve( national_dex_number_id, evolve_to_id, evolve_method, evolve_level) VALUES
+
+    (1, 2, 'level', 16),
+    (2, 3, 'level', 36),
+    (3, 4, 'level', 32),
+    (4, 5, 'level', 32),
+    (5, 6, 'level', 36),
+    (6, 7, 'level', 16),
+    (7, 8, 'level', 36),
+    (8, 9, 'level', 36),
+    (9, 10, 'level', 16),
+    (10, 11, 'level', 7),
+    (11, 12, 'level', 10),
+    (12, 13, 'level', 16),
+    (13, 14, 'level', 7),
+    (14, 15, 'level', 10),
+    (15, 16, 'level', 16),
+    (16, 17, 'level', 18),
+    (17, 18, 'level', 36),
+    (18, 19, 'level', 16),
+    (19, 20, 'level', 20),
+    (20, 21, 'level', 16),
+    (21, 22, 'level', 20),
+    (22, 23, 'level', 16),
+    (23, 24, 'level', 22),
+    (24, 25, 'level', 16),
+    (25, 26, 'level', 32),
+    (26, 27, 'level', 16),
+    (27, 28, 'level', 32);
+
+INSERT INTO pokemon.GameSpecific(national_dex_id, game_id, regional_dex_number, hp, attack, defense, special_attack, special_defense, speed) VALUES
+    (1, 1, 1, 45, 49, 49, 65, 65, 45),
+    (2, 1, 2, 60, 62, 63, 80, 80, 60),
+    (3, 1, 3, 80, 82, 83, 100, 100, 80),
+    (4, 1, 4, 39, 52, 43, 60, 50, 65),
+    (5, 1, 5, 58, 64, 58, 80, 65, 80),
+    (6, 1, 6, 78, 84, 78, 109, 85, 100),
+    (7, 1, 7, 44, 48, 65, 50, 64, 43),
+    (8, 1, 8, 59, 63, 80, 65, 80, 58),
+    (9, 1, 9, 79, 83, 100, 85, 105, 78),
+    (10, 1, 10, 45, 30, 35, 20, 20, 45),
+    (11, 1, 11, 50, 20, 55, 25, 25, 30),
+    (12, 1, 12, 60, 45, 50, 90, 80, 70),
+    (13, 1, 13, 40, 35, 30, 20, 20, 50),
+    (14, 1, 14, 45, 25, 50, 25, 25, 35),
+    (15, 1, 15, 65, 90, 40, 45, 80, 75),
+    (16, 1, 16, 40, 45, 40, 35, 35, 56),
+    (17, 1, 17, 63, 60, 55, 50, 50, 71);
+
