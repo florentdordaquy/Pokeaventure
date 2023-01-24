@@ -1,4 +1,4 @@
-# Pokeaventure
+    # Pokeaventure
 Fan site Pokémon, regroupant toutes les informations importantes sur les jeux de la saga pokémon.
 
 
@@ -52,26 +52,68 @@ Fan site Pokémon, regroupant toutes les informations importantes sur les jeux d
 
 - ### MySQL
   - Création de la base de donnée
-    - [x] Tables pour les Générations, les Jeux, les Régions
-    - [x] Table pour les Types et leur efficacité 
-    - [x] Table pour les status
-    - [ ] Table pour le pokédex national
-    - [ ] Table GigaMax, MégaEvolutions
-    - [ ] Table Groupe Oeuf
-    - [ ] 
-    - 
-      - [ ] Table pour le dex regional
-      - [ ] Table pour les évolutions
-      - [ ] Table pour les lieux 
-      - [ ] Table des pokémons selon le lieu et le jeu + le % de chance de le trouver
-      - [ ] Table pour les attaques + linkage avec les types, les status et les pokemons
-      - [ ] Table pour les talents + linkage avec les pokémons (avec le talent caché)
-      - [ ] Table pour les objets (nom, catégorie, effet, etc...)
-      - [ ] Table pour les users (nom, prénom, pseudo, email, mot de passe, etc...)
-      - [ ] Table pour les pokémons des users (nom, prénom, pseudo, email, mot de passe, etc...)
-      - [ ] Table pour l'équipe de pokemon de l'user
-      - [ ] Table pour les combats (nom, prénom, pseudo, email, mot de passe, etc...)
+  
+    - [x] Général (Jeux)
+      - Region
+      - Génération
+      - Game Console
+      - Version_Group
+      - Version
+      - Pokedex (liste des pokedex)
+      - Pokedex_Version_Group
+    - [x] Général (Pokémon)
+      - Statistics, characteristics, nature
+      - growth_rate, experience
+      - type, type_effectiveness
       - 
+    - [x] Lieux
+      - Location
+    - [ ] Abilities
+      - Ability
+      - Ability_changelog
+      - Ability_description
+    - [ ] Moves
+      - move_target
+      - move_damage_class
+      - move_effect // move_effect_changelog
+      - move_flag (Charge, Heal, Protect, Contact, etc...)
+      - move_meta_ailment // move_meta_category // move_meta
+      - move // move_changelog
+      - move_description (description des attaques selon la génération)
+    - [ ] Items
+      - item_pocket
+      - item_category
+      - item_fling_effect
+      - item_flag (consumable, holdable, etc...)
+      - item
+      - item_description (description des objets selon la génération)
+    - [ ] Berry
+      - berry_firmness
+      - berry_flavor
+    - [ ] Pokemon (liste des pokemons)
+      - egg_group
+      - color, shape, habitat, category,
+      - pokemon (ajouter stats et type et forme) + is_default, is_mega, 
+      - pokemon_pokedex_description (description des pokemon selon la génération)
+      - pokemon_pokedex_number (numéro des pokemon selon le pokedex)
+      - pokemon_evolutions (évolutions des pokemon)
+      - pokemon_changelog (changelog des pokemon type, stats, etc...)
+      - pokemon_ability (talents des pokemon)
+      - pokemon_item (objets des pokemon)
+      - pokemon_move_method (méthodes d'apprentissage des attaques des pokemon)
+      - pokemon_move (attaques des pokemon)
+    - [ ] Pokemon_form
+      - = actuel pokemon + forme 
+  - 
+  - [ ] Evolution
+    - Evolution Method
+  - 
+
+    - [ ] Table pour les users (nom, prénom, pseudo, email, mot de passe, etc...)
+    - [ ] Table pour les pokémons des users (nom, prénom, pseudo, email, mot de passe, etc...)
+    - [ ] Table pour l'équipe de pokemon de l'user
+    - [ ] Table pour les combats (nom, prénom, pseudo, email, mot de passe, etc...)
+     
     
 - ### Java  
   - [ ] Système de connexion - déconnexion - inscription - mot de passe oublié - confirmation par mail - ...
